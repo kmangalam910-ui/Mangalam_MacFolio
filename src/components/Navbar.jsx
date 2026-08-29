@@ -11,7 +11,7 @@ const Navbar = () => {
 
         <ul>
           {navLinks.map(({ id, name }) => (
-            <li key={id}>
+            <li key={id} className="no-underline">
               <p>{name}</p>
             </li>
           ))}
