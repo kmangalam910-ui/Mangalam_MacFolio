@@ -9,7 +9,7 @@ const Navbar = () => {
         <img src="/images/logo.svg" alt='Logo' />
         <p className='font-bold'>Mangalam's Portfolio</p>
 
-        <ul className="list-none">
+        <ul className="list-none ">
           {navLinks.map(({ id, name }) => (
             <li key={id}>
               <p>{name}</p>
