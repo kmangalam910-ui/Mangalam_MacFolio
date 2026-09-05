@@ -20,8 +20,8 @@ const WindowWrapper = (Component, windowKey) => {
 
       gsap.fromTo(
         ele,
-        { scale: 0.5, opacity: 0, y: 40 },
-        { scale: 1, opacity: 1, duration: 0.4, y: 0, ease: "power2.inOut" },
+        { scale: 0.5, opacity: 0 },
++       { scale: 1, opacity: 1, duration: 0.4, ease: "power2.inOut" },
       );
     }, [isOpen]);
 
@@ -29,7 +29,10 @@ const WindowWrapper = (Component, windowKey) => {
       const ele = ref.current;
       if(!ele) return;
 
-      const [instance] = Draggable.create(ele, {onPress: () => focusWindow(windowKey)});
+      const [instance] = Draggable.create(ele, {
+        zIndexBoost: false, 
+        onPress: () => dispatch(focusWindow(windowKey))
+      });
 
       return () => instance.kill()
     }, [])
