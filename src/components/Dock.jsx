@@ -70,7 +70,8 @@ const Dock = () => {
       console.error(`Window not found for app: ${app.id}`);
       return;
     }
-    if(currentWindow.isOpen) {      dispatch(closeWindow(app.id))
+    if(currentWindow.isOpen) {
+      dispatch(closeWindow(app.id))
     } else {
       dispatch(openWindow(app.id))
     }
