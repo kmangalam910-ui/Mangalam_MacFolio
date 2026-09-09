@@ -11,9 +11,10 @@ const WindowControls = ({ target }) => {
   return (
     <>
       <div id="window-controls">
-        <button type="button" className="close" aria-label="Close terminal window" onClick={() => dispatch(closeWindow(target))} />
-        <button type="button" className="minimize cursor-pointer" aria-label="Minimize terminal window" onClick={() => setPopup(true)} />
-        <button type="button" className="maximize cursor-pointer" aria-label="Maximize terminal window" onClick={() => setPopup(true)} />        {popup && <Popup />}
+        <button type="button" className="close cursor-default" aria-label="Close terminal window" onClick={() => dispatch(closeWindow(target))} />
+        <button type="button" className="minimize cursor-default" aria-label="Minimize terminal window" onClick={() => setPopup(true)} />
+        <button type="button" className="maximize cursor-default" aria-label="Maximize terminal window" onClick={() => setPopup(true)} />
+        {popup && <Popup />}
       </div>
     </>
   );

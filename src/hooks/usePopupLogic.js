@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const usePopupLogic = () => {
-  const [popup, setPopup] = useState(null);
+  const [popup, setPopup] = useState(false);
 
   useEffect(() => {
     let timer = setTimeout(() => {

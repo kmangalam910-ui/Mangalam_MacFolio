@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import windowSlice from "./windowSlice"
+import windowSlice from "./windowSlice";
+import locationSlice from "./locationSlice";
 
 const store = configureStore({
   reducer: {
-    window: windowSlice
+    window: windowSlice,
+    location: locationSlice
   }
 })
 

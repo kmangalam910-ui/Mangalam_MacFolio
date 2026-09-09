@@ -1,8 +1,12 @@
 import dayjs from "dayjs";
 import { navIcons, navLinks } from "#constants";
-
+import { openWindow } from "#store/windowSlice";
+import { useDispatch } from "react-redux";
 
 const Navbar = () => {
+
+  const dispatch = useDispatch()
+
   return (
     <nav>
       <div>
@@ -10,10 +14,10 @@ const Navbar = () => {
         <p className='font-bold'>Mangalam's Portfolio</p>
 
         <ul>
-          {navLinks.map(({ id, name }) => (
-            <li key={id}>
+          {navLinks.map(({ id, name, type }) => (
+            <button key={id} onClick={() => dispatch(openWindow(type))}>
               <p>{name}</p>
-            </li>
+            </button>
           ))}
         </ul>
       </div>

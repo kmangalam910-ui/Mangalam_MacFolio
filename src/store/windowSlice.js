@@ -5,14 +5,16 @@ const windowSlice = createSlice({
   name: "windowSlice",
   initialState: {
     ...WINDOW_CONFIG,
-    nextZndex: INITIAL_Z_INDEX + 1
+    nextZndex: INITIAL_Z_INDEX + 1,
   },
   reducers: {
     openWindow: (state, action) => {
-      const win = state[action.payload];
+      const windowKey =
+        typeof action.payload === "string" ? action.payload : action.payload.key;
+      const win = state[windowKey];
       win.isOpen = true;
       win.zIndex = state.nextZndex;
-      win.data = win.data ?? null;
+      win.data = typeof action.payload === "string" ? win.data : action.payload.data;
       state.nextZndex++;
     },
 
