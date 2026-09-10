@@ -14,7 +14,9 @@ body {
 }
 
 html.dark body {
-  background-image: linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%)), url("/images/wallpaper.png");
+  background-image:
+    linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%)),
+    url("/images/wallpaper.png");
 }
 
 @theme {
@@ -324,11 +326,11 @@ html.dark body {
         @apply space-y-1;
 
         .active {
-          @apply bg-blue-100 text-blue-700 dark:bg-gray-950/60;
+          @apply bg-blue-100 text-blue-700;
         }
 
         .not-active {
-          @apply text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700;
+          @apply text-gray-700 hover:bg-gray-200;
         }
 
         li {
@@ -407,7 +409,7 @@ html.dark nav {
   }
 
   .logo {
-    filter: invert(1)
+    filter: invert(1);
   }
 
   time {
@@ -439,10 +441,14 @@ html.dark #photos .sidebar,
 html.dark #finder .sidebar {
   @apply bg-gray-800 border-gray-700;
 }
-/* 
-html.dark #finder .sidebar li p {
-  @apply text-gray-300
-} */
+
+html.dark #finder .sidebar .active {
+  @apply bg-gray-950/60;
+}
+
+html.dark #finder .sidebar .not-active {
+  @apply text-gray-300 hover:bg-gray-700;
+}
 
 html.dark .bg-white {
   @apply bg-gray-900;
