@@ -13,6 +13,10 @@ body {
   background-position: center;
 }
 
+html.dark body {
+  background-image: linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%)), url("/images/wallpaper.png");
+}
+
 @theme {
   --font-georama: "Georama", sans-serif;
   --font-roboto: "Roboto Mono", monospace;
@@ -51,7 +55,7 @@ body {
       @apply flex items-center gap-5 max-sm:hidden;
 
       p {
-        @apply text-sm cursor-pointer hover:underline transition-all;
+        @apply text-sm cursor-pointer hover:scale-115 transition-all duration-500;
       }
     }
 
@@ -320,11 +324,11 @@ body {
         @apply space-y-1;
 
         .active {
-          @apply bg-blue-100 text-blue-700;
+          @apply bg-blue-100 text-blue-700 dark:bg-gray-950/60;
         }
 
         .not-active {
-          @apply text-gray-700 hover:bg-gray-200;
+          @apply text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700;
         }
 
         li {
@@ -393,4 +397,77 @@ body {
       }
     }
   }
+}
+
+html.dark nav {
+  @apply bg-gray-950/60 text-gray-100;
+
+  .icon-hover {
+    filter: invert(1);
+  }
+
+  .logo {
+    filter: invert(1)
+  }
+
+  time {
+    @apply text-gray-100;
+  }
+}
+
+html.dark #safari,
+html.dark #terminal,
+html.dark #contact,
+html.dark #photos,
+html.dark #resume,
+html.dark #txtfile,
+html.dark #imgfile {
+  @apply bg-gray-900 text-gray-100;
+}
+
+html.dark #finder .content,
+html.dark #safari .blog,
+html.dark #safari .search {
+  @apply bg-gray-900 text-gray-100;
+}
+
+html.dark #window-header {
+  @apply bg-gray-800 border-gray-700 text-gray-300;
+}
+
+html.dark #photos .sidebar,
+html.dark #finder .sidebar {
+  @apply bg-gray-800 border-gray-700;
+}
+/* 
+html.dark #finder .sidebar li p {
+  @apply text-gray-300
+} */
+
+html.dark .bg-white {
+  @apply bg-gray-900;
+}
+
+html.dark .bg-gray-50 {
+  @apply bg-gray-800;
+}
+
+html.dark .bg-gray-200 {
+  @apply bg-gray-700;
+}
+
+html.dark .text-black,
+html.dark .text-gray-800,
+html.dark .text-gray-700 {
+  @apply text-gray-100;
+}
+
+html.dark .text-gray-500,
+html.dark .text-gray-400 {
+  @apply text-gray-300;
+}
+
+html.dark .border-gray-200,
+html.dark .border-gray-300 {
+  @apply border-gray-700;
 }
